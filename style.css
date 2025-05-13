@@ -1,0 +1,1100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+h2, h3, h4 {
+    margin-bottom: 15px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Hero Section Styles */
+.hero {
+    display: flex;
+    background-color: #f5f5f5;
+    width: 100%;
+    height: 70vh;
+    position: relative;
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+
+.hero-content {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    height: 70vh;
+}
+
+.hero-carousel {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-container {
+    width: 100%;
+    position: relative;
+    height: 70vh; 
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    display: none;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    display: block;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.carousel-controls button {
+    background-color: rgba(201, 33, 39, 0.7);
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    transition: background-color 0.3s;
+}
+
+.carousel-controls button:hover {
+    background-color: rgba(201, 33, 39, 1);
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    border-radius: 50%;
+    opacity: 0.7;
+    cursor: pointer;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.dot:hover {
+    opacity: 0.9;
+}
+
+.dot.active {
+    opacity: 1;
+    transform: scale(1.2);
+    background-color: #c92127;
+}
+
+/* Courses Section Styles */
+.courses {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.courses h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.course-cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Enhanced Course Card Styles with Hover Effects */
+
+/* Enhanced Course Card Styles with Hover Effects */
+
+.course-card {
+    flex: 1;
+    min-width: 250px;
+    max-width: 280px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f1f1f1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover effect for all course cards */
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Add subtle background shine effect on hover */
+.course-card::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+    transform: rotate(45deg);
+    transition: all 0.8s ease;
+}
+
+.course-card:hover::before {
+    top: 100%;
+    left: 100%;
+}
+
+/* BCA card special hover effect (since it already has a red background) */
+.course-card.bca {
+    background-color: #c92127;
+    color: white;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.course-card.bca:hover {
+    background-color: #e72e35;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(201, 33, 39, 0.3);
+}
+
+/* Hover effects for other specific cards */
+.course-card.btech:hover {
+    background-color: #f7f7f7;
+    border-top: 3px solid #2196F3;
+}
+
+.course-card.bba:hover {
+    background-color: #f7f7f7;
+    border-top: 3px solid #4CAF50;
+}
+
+.course-card.mba:hover {
+    background-color: #f7f7f7;
+    border-top: 3px solid #FF9800;
+}
+
+/* Course card heading hover effect - CENTERED */
+.course-card h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.course-card:hover h3 {
+    transform: scale(1.05);
+}
+
+/* Add underline animation for headings */
+.course-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #c92127;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.course-card:hover h3::after {
+    width: 50%;
+}
+
+.course-card.bca h3::after {
+    background-color: white;
+}
+
+/* Course list item hover effects - KEEPING LEFT ALIGNMENT */
+.course-card ul {
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: left;
+}
+
+.course-card li {
+    font-size: 14px;
+    margin-bottom: 5px;
+    transition: all 0.2s ease;
+    padding-left: 0;
+    position: relative;
+    text-align: left;
+}
+
+.course-card:hover li {
+    padding-left: 5px;
+}
+
+/* See fee details button hover effects - KEEPING ORIGINAL POSITION */
+.see-fee-details a {
+    background-color: #c92127;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.see-fee-details a:hover {
+    background-color: #e72e35;
+    transform: scale(1.1);
+    box-shadow: 0 2px 8px rgba(201, 33, 39, 0.4);
+}
+
+.course-card.bca .see-fee-details a {
+    background-color: white;
+    color: #c92127;
+    transition: all 0.3s ease;
+}
+
+.course-card.bca .see-fee-details a:hover {
+    background-color: #f5f5f5;
+    color: #e72e35;
+    transform: scale(1.1);
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.4);
+}
+
+/* Enhanced Early Bird Section Styles */
+.early-bird {
+    background: linear-gradient(135deg, #c92127 0%, #e73434 100%);
+    color: white;
+    padding: 30px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 8px;
+    margin: 20px;
+    box-shadow: 0 5px 15px rgba(201, 33, 39, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.early-bird::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+    animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.8); opacity: 0.5; }
+    50% { transform: scale(1.2); opacity: 0.2; }
+    100% { transform: scale(0.8); opacity: 0.5; }
+}
+
+.early-bird h2 {
+    margin: 0;
+    flex: 1;
+    text-align: center;
+    font-size: 26px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+.highlight {
+    font-style: italic;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    padding: 0 5px;
+}
+
+.highlight::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    animation: expand 1.5s infinite;
+}
+
+@keyframes expand {
+    0% { width: 0; left: 50%; }
+    50% { width: 100%; left: 0; }
+    100% { width: 0; left: 50%; }
+}
+
+.phone-input {
+    display: flex;
+    border-radius: 8px;
+    padding: 0;
+    flex: 1;
+    max-width: 400px;
+    margin-left: 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+    border: 2px solid white;
+}
+
+.phone-input::after {
+    content: '';
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23c92127"><path d="M9.71,6.29a1,1,0,0,0-1.42,0l-5,5a1,1,0,0,0,0,1.42l5,5a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42L5.41,12l4.3-4.29A1,1,0,0,0,9.71,6.29Z"/><path d="M20.71,11.29l-5-5a1,1,0,0,0-1.42,1.42L18.59,12l-4.3,4.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0l5-5A1,1,0,0,0,20.71,11.29Z"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+    pointer-events: none;
+}
+
+.phone-code {
+    background-color: white;
+    color: #c92127;
+    padding: 12px 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    border-right: 1px solid rgba(201, 33, 39, 0.2);
+}
+
+.phone-input input {
+    flex: 1;
+    border: none;
+    padding: 12px 40px 12px 15px;
+    outline: none;
+    font-size: 16px;
+    color: #444;
+    transition: all 0.3s ease;
+}
+
+.phone-input input::placeholder {
+    color: #999;
+}
+
+.phone-input input:focus {
+    background-color: #f9f9f9;
+}
+
+/* Add a submit button */
+.early-bird-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex: 1;
+}
+
+.early-bird-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.submit-btn {
+    background-color: white;
+    color: #c92127;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.submit-btn:hover {
+    background-color: #f1f1f1;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/*Responsive adjustments */
+@media (max-width: 768px) {
+    .early-bird {
+        flex-direction: column;
+        padding: 25px 15px;
+    }
+    
+    .early-bird h2 {
+        margin-bottom: 20px;
+        font-size: 22px;
+    }
+    
+    .early-bird-form {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .phone-input {
+        margin-left: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .submit-btn {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+/* Enrollment Process Section Styles */
+.enrollment {
+    background-image: url('images/aravali2.webp');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 40px 0;
+}
+
+.enrollment::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.85);
+    z-index: 1;
+}
+
+.enrollment-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
+}
+
+.enrollment-header {
+    flex: 1;
+    min-width: 250px;
+    padding-right: 20px;
+    border-right: 1px solid #777;
+}
+
+.enrollment-header h2 {
+    color: #c92127;
+    font-size: 32px;
+    margin: 0;
+    line-height: 1.2;
+    font-weight: bold;
+}
+
+.enrollment-header h3 {
+    font-size: 28px;
+    margin: 0;
+    color: #000;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.enrollment-steps {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    padding-left: 30px;
+    gap: 15px;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.step-number {
+    background-color: #c92127;
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.step-text {
+    font-weight: 500;
+}
+
+/* About Section Styles */
+.about-container {
+    max-width: 1200px;
+    margin: 30px auto 0;
+    display: flex;
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
+    gap: 30px;
+}
+
+.about-content {
+    flex: 2;
+    min-width: 300px;
+    text-align: left;
+}
+
+.about-content h4 {
+    color:rgb(221, 33, 39);
+    font-size: 18px;
+    margin-bottom: 5px;
+    font-weight: bolder;
+}
+
+.about-content h2 {
+    font-size: 18px;
+    font-weight: bolder;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.about-content p {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    color: #131313;
+    font-weight: bold;
+}
+
+.campus-tour {
+    flex: 1;
+    min-width: 350px;
+    position: relative;
+}
+
+.campus-tour img {
+    width: 100%;
+    border-radius: 8px;
+    height: auto;
+}
+
+/* Why Choose Section Styles */
+
+.why-choose {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #c92127 0%, #a71a1f 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add subtle background pattern */
+.why-choose::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+}
+
+.why-choose-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.why-choose h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.why-choose h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 56%;
+    transform: translateX(-50%);
+    width: 140px;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+}
+
+.why-choose p {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 40px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.features-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 25px;
+    position: relative;
+}
+
+.features-column {
+    flex: 1;
+    min-width: 300px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.features-column:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 18px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.feature:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.feature:hover {
+    transform: translateX(5px);
+}
+
+.feature-icon {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-icon i {
+    color: #c92127;
+    font-size: 14px;
+}
+
+.feature-text {
+    flex: 1;
+}
+
+.feature-title {
+    font-weight: 600;
+    margin-bottom: 3px;
+    font-size: 15px;
+}
+
+
+@media (max-width: 992px) {
+    .why-choose {
+        padding: 50px 20px;
+    }
+    
+    .why-choose h2 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .why-choose {
+        padding: 40px 15px;
+    }
+    
+    .features-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .features-column {
+        min-width: 100%;
+    }
+    
+    .why-choose h2 {
+        font-size: 24px;
+    }
+    
+    .why-choose p {
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+}
+
+/* Animation for the features */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+/* Success Stories & Recruiters Section Styles */
+.success-recruiters {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.success-stories, .key-recruiters {
+    flex: 1;
+    min-width: 300px;
+}
+
+.success-stories h2, .key-recruiters h2 {
+    margin-bottom: 20px;
+}
+
+.alumni-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.alumni {
+    text-align: center;
+}
+
+.alumni-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+}
+
+.alumni p {
+    font-size: 12px;
+}
+
+
+.recruiters-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    
+}
+
+.recruiter-logo {
+    width: 100%;
+    height: 80px;
+    border-right: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.recruiter-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.recruiters-grid .recruiter-logo:nth-child(3n) {
+    border-right: none;
+}
+
+
+.recruiters-grid .recruiter-logo:nth-last-child(-n+3) {
+    border-bottom: none;
+}
+
+
+@media (max-width: 1200px) {
+    .course-card {
+        min-width: 220px;
+    }
+    
+    .campus-tour {
+        min-width: 300px;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero, .hero-content, .carousel-container {
+        height: 60vh;
+    }
+    
+    .enrollment-header h2 {
+        font-size: 28px;
+    }
+    
+    .enrollment-header h3 {
+        font-size: 24px;
+    }
+    
+    .about-content h2 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero, .hero-content, .carousel-container {
+        height: 50vh;
+    }
+    
+    .carousel-controls button {
+        width: 30px;
+        height: 30px;
+        padding: 5px;
+    }
+    
+    .dot {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .course-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .course-card {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .early-bird {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .early-bird h2 {
+        margin-bottom: 15px;
+    }
+    
+    .phone-input {
+        margin-left: 0;
+        max-width: 100%;
+    }
+    
+    .enrollment-container {
+        flex-direction: column;
+    }
+    
+    .enrollment-header {
+        border-right: none;
+        border-bottom: 1px solid #777;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+        padding-right: 0;
+    }
+    
+    .enrollment-steps {
+        padding-left: 0;
+    }
+    
+    .about-container {
+        flex-direction: column;
+    }
+    
+    .campus-tour {
+        min-width: 100%;
+        margin-top: 20px;
+    }
+    
+    .features-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .alumni-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .recruiters-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+   
+    .recruiters-grid .recruiter-logo:nth-child(3n) {
+        border-right: 1px solid #e0e0e0;
+    }
+    
+    .recruiters-grid .recruiter-logo:nth-child(2n) {
+        border-right: none;
+    }
+    
+    .recruiters-grid .recruiter-logo:nth-last-child(-n+3) {
+        border-bottom: 1px solid #e0e0e0;
+    }
+    
+    .recruiters-grid .recruiter-logo:nth-last-child(-n+2) {
+        border-bottom: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero, .hero-content, .carousel-container {
+        height: 40vh;
+    }
+    
+    .courses h2 {
+        font-size: 20px;
+    }
+    
+    .enrollment-header h2 {
+        font-size: 24px;
+    }
+    
+    .enrollment-header h3 {
+        font-size: 20px;
+    }
+    
+    .about-content h2 {
+        font-size: 14px;
+    }
+    
+    .alumni-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .recruiters-grid {
+        grid-template-columns: 1fr;
+    }
+    
+ 
+    .recruiters-grid .recruiter-logo {
+        border-right: none;
+    }
+    
+    .recruiters-grid .recruiter-logo:last-child {
+        border-bottom: none;
+    }
+    
+    .recruiters-grid .recruiter-logo:nth-last-child(-n+2) {
+        border-bottom: 1px solid #e0e0e0;
+    }
+    
+    .recruiters-grid .recruiter-logo:last-child {
+        border-bottom: none;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 375px) {
+    .hero, .hero-content, .carousel-container {
+        height: 30vh;
+    }
+    
+    .courses h2, .why-choose h2, .success-stories h2, .key-recruiters h2 {
+        font-size: 18px;
+    }
+    
+    .enrollment-header h2 {
+        font-size: 20px;
+    }
+    
+    .enrollment-header h3 {
+        font-size: 18px;
+    }
+    
+    .course-card h3 {
+        font-size: 18px;
+    }
+    
+    .step {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .carousel-dots {
+        bottom: 5px;
+    }
+    
+    .dot {
+        width: 8px;
+        height: 8px;
+    }
+}
